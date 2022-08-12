@@ -1,0 +1,28 @@
+{
+  "name": "api-es6",
+  "version": "1.0.0",
+  "description": "Creating API using es 6",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node app.js",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niyobertin/API-ES6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niyobertin/API-ES6/issues"
+  },
+  "homepage": "https://github.com/niyobertin/API-ES6#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "pg": "^8.7.3",
+    "sequelize": "^6.21.3"
+  }
+}
