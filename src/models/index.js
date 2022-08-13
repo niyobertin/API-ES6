@@ -1,27 +1,50 @@
-import Sequelize from "sequelize";
 
-import getUserModel from "./user.js";
-import getMessageModel from "./message.js";
+const fs = require('fs');
+const path = require('path');
+const Sequelize = require('sequelize');
+const { ne } = require('sequelize/types/lib/operators');
+const basename = path.basename(__filename);
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.json')[env];
+const db = {};
 
-const sequelize = new Sequelize(
-    process.env.DATABASE,
-    process.env.DATABASE_USER,
-    process.env.DATABASE_PASSWORD,
-    {
-        dialect: 'postgres',
-    },
+// let sequelize;
+// if (config.use_env_variable) {
+//     sequelize = new Sequelize(process.env[config.use_env_variable], config);
+// } else {
+//     sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
 
-);
+const databases = Object(config.databases);
 
-const models = {
-    User: getUserModel(sequelize, Sequelize),
-    Message: getMessageModel(sequelize, Sequelize),
-};
+for (let i = 0; i < databases.length; i++) {
+    let database = databases[i];
+    let dbPath = config.databases[database];
+    db[database] = new Sequelize(
+        dbPath.database,
+        dbPath.username,
+        dbPath.password,
+        dbPath
+    );
+}
 
-Object.keys(models).forEach((key) => {
-    if ('associate' in models[key]) {
-        models[key].associate(models);
+fs
+    .readdirSync(__dirname + '/rest')
+    .filter(file => {
+        return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+    })
+    .forEach(file => {
+        const model = require(path.join(__dirname + '/rest', file))//(sequelize, Sequelize.DataTypes);
+        db[model.name] = model;
+    });
+
+Object.keys(db).forEach(modelName => {
+    if (db[modelName].associate) {
+        db[modelName].associate(db);
     }
 });
-export { sequelize };
-export default models;
+
+// db.sequelize = sequelize;
+// db.Sequelize = Sequelize;
+
+module.exports = db;
