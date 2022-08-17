@@ -1,12 +1,12 @@
 import express from "express";
 import student from "../models/student-models.js";
+import controller from "../controllers/student-controller.js";
 const router = express.Router();
 
 
 
-router.get("/", (req, res) => {
-    res.send("This is student routeres")
-})
+router.get("/", controller.getStudents)
+router.post("/", controller.addStudent)
 
 
 

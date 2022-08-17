@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8000;
 //middelware
 app.use(express.json());
 app.use('/students', studentRouter);
-
+app.use(bodyParser.json());
 app.get("/", (req, res) => {
     res.send("<h1>this is a test</h1>");
 })

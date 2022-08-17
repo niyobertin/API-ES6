@@ -2,14 +2,13 @@ import Sequelize from "sequelize";
 import db from "../config/config.js";
 
 
-const Students = db.define('students', {
+const Students = db.define('studentsManagement', {
     firstName: {
         type: Sequelize.STRING,
         allowNull: false
     },
     lastName: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
     },
     gender: {
         type: Sequelize.STRING,
@@ -20,7 +19,7 @@ const Students = db.define('students', {
         allowNull: false,
         unique: true
     },
-    class: {
+    grade: {
         type: Sequelize.STRING,
         allowNull: false
     },
