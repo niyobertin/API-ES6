@@ -1,7 +1,6 @@
 import Sequelize from "sequelize";
 import db from "../config/config.js";
-
-
+//student modele
 const Students = db.define('studentsManagement', {
     firstName: {
         type: Sequelize.STRING,
@@ -24,7 +23,6 @@ const Students = db.define('studentsManagement', {
         allowNull: false
     },
 })
-
-await Students.sync();
-
+await Students.sync();//crate default table if not exist
+//exporting studnet model
 export default Students;
