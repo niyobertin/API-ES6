@@ -1,0 +1,27 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+
+}
+
+#register {
+    margin: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: bolder;
+    align-items: center;
+    text-align: center;
+}
+
+#submit {
+    width: 100px;
+    color: brown;
+    cursor: pointer;
+    font-size: large;
+
+}
+
+input:hover {
+    background-color: yellow;
+}
