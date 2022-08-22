@@ -3,14 +3,15 @@ import db from "./config/config.js";
 import bodyParser from "body-parser";
 import path from "path";
 import studentRouter from "./routers/routers.js";
+import cors from "cors"
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 
 //middelware
 app.use(express.json());
+app.use(cors());
 app.use('/students', studentRouter);
-app.use(bodyParser.json());
 app.get("/", (req, res) => {
     res.send("<h1>this is a test</h1>");
 })
