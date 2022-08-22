@@ -8,7 +8,7 @@ const getStudents = (req, res) => {
         })
         .catch(err => console.log(err));
 };
-//Getting Student by promaruy key
+//Getting Student by primary key
 const getUninqueStudent = (req, res) => {
     const id = parseInt(req.params.id);
     Student.findByPk(id)
