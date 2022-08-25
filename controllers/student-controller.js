@@ -31,8 +31,8 @@ const addStudent = (req, res) => {
         email,
         grade,
     })
-        .then(student => res.send("Student added to database successifull"))
-        .catch((err) => res.send("Failed to add  student to database "))
+        .then(student => res.send("Adding student successfully ✅"))
+        .catch((err) => res.send("Adding new student failed: Email providede was taken by someone else!!!"))
 };
 //Updating student 
 const updateStudent = (req, res) => {
@@ -60,7 +60,7 @@ const removeStudent = (req, res) => {
     Student.findByPk(id)
         .then((deleteStudent) => {
             if (!deleteStudent) {
-                res.sendStatus(404).send("Student does not found");
+                res.sendStatus(404);
             } else {
                 deleteStudent.destroy()
                     .then(() => res.send("Student deleted successifully!!!"))
