@@ -35,9 +35,8 @@ footer {
 }
 
 input {
-    border: none;
     width: 20em;
-    border-bottom: dashed 1px rgb(197, 197, 41);
+    border-bottom: solid 1px rgb(41, 161, 197);
     background-position: -200px 0;
     background-size: 200px 100%;
     background-repeat: no-repeat;
@@ -71,18 +70,58 @@ button:hover {
     box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
-.fname {
-    width: 16em;
+#fname {
+    width: 14em;
+    height: 2em;
 }
 
-.sname {
-    width: 14.5em;
+#sname {
+    width: 12.3em;
+    height: 2em;
+}
+
+#day {
+    width: 17em;
+    height: 2em;
+}
+
+#year {
+    width: 17.5em;
+    height: 2em;
 }
 
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.month {
-    width: 19em;
+#month {
+    width: 16.5em;
+    height: 2em;
+}
+
+@media screen and (max-width: 700px) {
+    input {
+        width: 10em;
+    }
+
+    main {
+        display: block;
+        margin: 0px;
+        height: auto;
+        padding: 10px;
+    }
+
+    #heading {
+        width: 100%;
+        height: 10vh;
+        margin: 0px;
+    }
+
+    h1 {
+        font-size: large;
+    }
+
+    h3 {
+        font-size: large;
+    }
 }

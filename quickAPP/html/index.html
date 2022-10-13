@@ -17,28 +17,29 @@
     </header>
 
     <main>
-        <div class="dob">
+        <div id="dob">
             <h3>Provide your names</h3>
-            <p><span>First Name: <input type="text" class="fname"></span><br /></p>
-            <p> <span>Second Name: <input type="text" class="sname"></span></p>
+            <p><span>First Name: <input type="text" id="fname"></span><br /></p>
+            <p> <span>Second Name: <input type="text" id="sname"></span></p>
             <h3>Provide your birth day</h3>
-            <p><span>Date: <input type="text" class="date"></span><br /></p>
-            <p> <span>Month:<input type="text" class="month"></span><br /></p>
-            <p><span>Year:<input type="text" class="year"></span><br /></p>
+            <p><span>Date: <input type="text" id="day"></span><br /></p>
+            <p> <span>Month:<input type="text" id="month"></span><br /></p>
+            <p><span>Year:<input type="text" id="year"></span><br /></p>
         </div>
         <div id="yourhoroscope">
-            <h3>Hi, user this is your horoscope</h3>
-            <p class="sign">sign</p>
-            <p class="animalsign">anima</p>
-            <p class="years">your years</p>
-            <p class="sign"></p>
+            <h3 id="greet"></h3>
+            <p id="sign"></p>
+            <p id="animalsign"></p>
+            <p id="years"></p>
+            <!-- <p id="sign"></p> -->
         </div>
     </main>
     <div class="button">
-        <center><button>Find</button></center>
+        <center><button onclick="displyHoroscope()">Find</button></center>
         <footer>
             <p class="copy">&copy;Aldo Twizerimana 2022</p>
         </footer>
+        <script src="../js/index.js"></script>
 </body>
 
 </html>
