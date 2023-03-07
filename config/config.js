@@ -1,5 +1,5 @@
 import Sequelize from "sequelize";
-const db = new Sequelize('studentDb', 'postgres', 'nikuze', {
+const db = new Sequelize('studentdb', 'postgres', 'nikuze', {
     host: "localhost",
     port: 12345,
     dialect: "postgres",
